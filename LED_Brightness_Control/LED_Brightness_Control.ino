@@ -1,14 +1,14 @@
 
-// Write Program for Pot Reading and control LED
-#define POT_PIN A0
-#define LED_PIN 4
+// Write Program for IR Module and printing on Serial Monitor
+#define IR_PIN 4
 
 void setup() {
-  pinMode(LED_PIN, OUTPUT);
+  Serial.begin(9600);
+  pinMode(IR_PIN, INPUT);
 }
 
 void loop() {
-  int potValue = analogRead(POT_PIN);
-  analogWrite(LED_PIN, potValue/4);
+  int irValue = digitalRead(IR_PIN);
+  Serial.println(irValue);
   delay(1000);
 }
